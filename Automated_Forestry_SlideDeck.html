@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hedging Our Bet on Forest Permanence</title>
+    <link rel="stylesheet" href="styles/HEAT_style.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        /* Basic slide styling */
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            box-sizing: border-box;
+            padding: 4rem;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: var(--font-family-main);
+        }
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .slide.title-slide, .slide.conclusion-slide {
+            align-items: center;
+            justify-content: center;
+        }
+        .slide h1, .slide h2, .slide h3 {
+            font-family: var(--font-family-main);
+            color: var(--primary-color);
+        }
+        .slide strong {
+            font-weight: 700; /* Semibold for general bolding */
+        }
+        .slide .font-black {
+            font-weight: 900; /* Extra bold for emphasis */
+        }
+        /* Print styles for A4 optimization */
+        @media print {
+            body {
+                width: 210mm;
+                height: 297mm;
+                margin: 0;
+                padding: 0;
+                font-size: 10pt;
+            }
+            .slide {
+                display: block !important; /* Show all slides when printing */
+                page-break-after: always;
+                height: auto;
+                padding: 2cm;
+            }
+            .slide:last-child {
+                page-break-after: avoid;
+            }
+            .print\:hidden {
+                display: none !important;
+            }
+            .slide h1 { font-size: 24pt; }
+            .slide h2 { font-size: 18pt; }
+            h3 { font-size: 14pt; }
+            .slide p, .slide li { font-size: 11pt; }
+            .slide img {
+                max-width: 150px;
+            }
+        }
+    </style>
+</head>
+<body class="overflow-hidden">
+    <button onclick="window.print()" class="fixed top-4 right-4 bg-blue-641-c hover:bg-blue-7708-c text-white font-bold py-2 px-4 rounded inline-flex items-center print:hidden z-50">
+        <i data-lucide="printer" class="w-5 h-5 mr-2"></i>
+        Print / Save as PDF
+    </button>
+
+    <div id="presentation-container">
+        <section class="slide title-slide active">
+            <img src="assets/HEAT-logo.svg" alt="HEAT International Logo" class="mb-8 max-w-xs">
+            <h1 class="text-6xl font-extrabold text-blue-641-c mb-4">Hedging Our Bet on Forest Permanence</h1>
+            <h2 class="text-3xl text-gray-700 mb-8">Economic Viability of Climate Targets</h2>
+            <p class="text-xl text-gray-600">Michael G. Windisch et al. / Nature Communications</p>
+            <p class="text-lg text-gray-500">Published: 27 March 2025</p>
+        </section>
+
+        <section class="slide agenda-slide">
+            <h2 class="text-5xl font-extrabold text-blue-641-c mb-8 flex items-center">
+                <i data-lucide="list" class="w-10 h-10 mr-4 text-green-368-c"></i>
+                Agenda
+            </h2>
+            <ul class="list-none text-3xl space-y-4">
+                <li>Introduction to the Topic</li>
+                <li>The Challenge: Forest Vulnerability</li>
+                <li>Modeling Approach</li>
+                <li>Key Findings: Cost of Delay</li>
+                <li>Implications & Takeaways</li>
+            </ul>
+        </section>
+
+        <section class="slide content-slide">
+            <h2 class="text-4xl font-extrabold text-blue-641-c mb-4">Forests: Critical to Paris Agreement Goals</h2>
+            <h3 class="text-2xl text-gray-700 mb-8">Enhancing Carbon Storage and Sequestration</h3>
+            <ul class="list-disc list-inside text-xl leading-relaxed space-y-2">
+                <li>Reliance on forests for CO2 emission reduction.</li>
+                <li>Forests as a vast carbon removal service (13+ billion tonnes CO2/year).</li>
+                <li>Regrowing forests as low-cost, large-scale CDR.</li>
+            </ul>
+        </section>
+
+        <section class="slide content-slide">
+            <h2 class="text-4xl font-extrabold text-blue-641-c mb-4">Uncertainty Threatens Forest Carbon Sinks</h2>
+            <h3 class="text-2xl text-gray-700 mb-8">Climate Change & Human Intervention Impacts</h3>
+            <ul class="list-disc list-inside text-xl leading-relaxed space-y-2">
+                <li>Forests vulnerable to environmental changes (e.g., warmer temps, CO2 fertilization, phosphorus limitation).</li>
+                <li>Direct human activities (deforestation, degradation) underestimated in models.</li>
+                <li>Models might be too optimistic about future forest carbon storage.</li>
+            </ul>
+        </section>
+
+        <section class="slide content-slide">
+            <h2 class="text-4xl font-extrabold text-blue-641-c mb-4">Assessing Policy Responses to Forest Loss</h2>
+            <h3 class="text-2xl text-gray-700 mb-8">REMIND-MAgPIE Model & Scenario Analysis</h3>
+            <ul class="list-disc list-inside text-xl leading-relaxed space-y-2">
+                <li>Uses IAM REMIND-MAgPIE model.</li>
+                <li>Introduces "stylized disturbance rates" (e.g., 0.4% per year).</li>
+                <li>Compares "Foresighted" (immediate action) vs. "Myopic" (delayed action) policies.</li>
+            </ul>
+        </section>
+
+        <section class="slide content-slide">
+            <h2 class="text-4xl font-extrabold text-blue-641-c mb-4">Key Finding: Delaying Action Doubles Mitigation Costs</h2>
+            <h3 class="text-2xl text-gray-700 mb-8">Economic Burden of Reactive Policies</h3>
+            <ul class="list-disc list-inside text-xl leading-relaxed space-y-2">
+                <li>Myopic, 5-year delay: more than doubles additional mitigation costs and land use.</li>
+                <li>Myopic response to FCL is as stringent as foresighted response to twice the FCL rate.</li>
+                <li>Burden shifts to other sectors (energy, industry, transport).</li>
+            </ul>
+        </section>
+
+        <section class="slide content-slide">
+            <h2 class="text-4xl font-extrabold text-blue-641-c mb-4">Urgent Need for Proactive Forest Management</h2>
+            <h3 class="text-2xl text-gray-700 mb-8">Safeguarding Climate Goals & Economic Feasibility</h3>
+            <ul class="list-disc list-inside text-xl leading-relaxed space-y-2">
+                <li>Climate policy must treat forest permanence as a significant risk.</li>
+                <li>Invest in monitoring and safeguarding forests.</li>
+                <li>Integrate realistic disturbance projections into climate models.</li>
+            </ul>
+        </section>
+
+        <section class="slide conclusion-slide">
+            <img src="assets/HEAT-logo.svg" alt="HEAT International Logo" class="mb-8 max-w-xs">
+            <h1 class="text-5xl font-extrabold text-blue-641-c mb-4">Driving Sustainable Impact</h1>
+            <ul class="list-none text-2xl leading-relaxed space-y-4">
+                <li>Proactive forest management is an economic imperative.</li>
+                <li>Integrated strategies are key to achieving Paris Agreement goals.</li>
+                <li>Let's collaborate for a resilient, decarbonized future.</li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                currentSlide = (currentSlide + 1) % slides.length;
+            } else if (e.key === 'ArrowLeft') {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            }
+            showSlide(currentSlide);
+        });
+
+        lucide.createIcons();
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
